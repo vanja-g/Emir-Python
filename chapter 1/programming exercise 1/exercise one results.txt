@@ -1,0 +1,13 @@
+exercise one results
+    hello world
+    hello world
+    3
+    3.0
+    5
+    5.0
+    23
+    2 + 3 = 5
+    6
+    8
+    2.3333333333333335
+    2

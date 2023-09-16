@@ -1,0 +1,12 @@
+for (variable) in (collection):
+    the variable will become everything in the
+     collection starting from the first ending from the last
+
+    everything in python starts at 0
+
+
+
+    homework:
+        chapter 3 reading
+        everything in chapter 3 is circled
+        if the task is squared instead of circled write the awnser in your notebook

@@ -1,0 +1,17 @@
+4 main data types are as follows
+    floats are decimals (floating point)
+    string are "texts"
+    boolean is True and False
+    integer are whole numbers
+def main(): function definition
+main () calling function
+variable names can only contain letters,numbers and _
+(has to start with a letter or a _ cant be a number)
+definite loops
+    for i in range(how_many_times_the_loop_should_run):
+        some_code
+homework
+    chapter one chapter two reading
+    chapter 2 true false and multiple choice
+    chapter 1 programming exercise one and 2
+    chapter 2 programming exercises 3 and 4

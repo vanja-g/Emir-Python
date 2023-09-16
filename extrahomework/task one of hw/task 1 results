@@ -1,0 +1,29 @@
+a
+    This is the result of the function range(2,5):
+    range(2, 5)
+
+    i is now  2
+    i is now  3
+    i is now  4
+    We are outside of the loop now
+b
+
+    This is the result of the function range(3,10):
+    range(3, 10)
+
+    i is now  3
+    i is now  4
+    i is now  5
+    i is now  6
+    i is now  7
+    i is now  8
+    i is now  9
+    We are outside of the loop now
+c
+    This is the result of the function range(7,10):
+    range(7, 10)
+
+    i is now  7
+    i is now  8
+    i is now  9
+    We are outside of the loop now
