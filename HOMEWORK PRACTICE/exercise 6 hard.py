@@ -15,8 +15,6 @@ def main():
     if player not in rock_paper_scissors:
         print("Invalid move")
 
-    if any(rock_paper_scissors):
-
         if player == "rock" and computer == "paper":
             print("rock losses to paper I win, HAHAHAAHHA")
         elif player == "rock" and computer == "scissors":
@@ -35,14 +33,17 @@ def main():
             print("scissors beat paper I win hahahaha")
         elif player == "paper" and computer == "paper":
             print("paper and paper is a tie no way")
+    if any(rock_paper_scissors):
+
 
     while True:
         user_input1 = str(input("wanna play again? yes/no>>>>>"))
         user_input = user_input1.replace(" ","")
         if user_input.lower() == "no":
             print("unfortunate")
-            exit()
+            break
         elif user_input.lower() == "yes":
-            print("ready? go")
-            main()
+            print("ready? go!")
+            continue
+
 main()
