@@ -1,10 +1,9 @@
 import random
 
-
 def main():
     player_input = str(input("rock,paper,scissors shoot!!>>>"))
     player = player_input.replace(" ", "")
-    rock_paper_scissors = ("rock", "paper", "scissors")
+    rock_paper_scissors = ["rock", "paper", "scissors"]
 
     computer = random.choice(rock_paper_scissors)
     if player == "shoot":
