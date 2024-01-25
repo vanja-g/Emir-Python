@@ -2,20 +2,9 @@ from graphics import *
 
 line_middle_coordinates = [225, 425]
 field_centers = [
-        [Point(125,125), Point(325, 125), Point(525, 125)],
-        [Point(125, 325), Point(325, 325), Point(525, 325)],
-        [Point(125, 525), Point(325, 525), Point(525, 525)]]
-
-
-def get_clicked_field_coords(click: Point, line_middle_coordinates: list) -> tuple:
-    colindex = rowindex = 0
-    for coordinate in line_middle_coordinates:
-        if click.getX() >= coordinate:
-            colindex += 1
-        if click.getY() >= coordinate:
-            rowindex += 1
-
-    return rowindex, colindex
+    [Point(125, 125), Point(325, 125), Point(525, 125)],
+    [Point(125, 325), Point(325, 325), Point(525, 325)],
+    [Point(125, 525), Point(325, 525), Point(525, 525)]]
 
 
 def main():
@@ -26,34 +15,28 @@ def main():
              [None, None, None],
              [None, None, None]]
 
-    # for r in field_centers:
-    #     for p in r:
-    #         draw_O(p, win)
-
-    # draw_X(None, win)
-
     turn = "o"
+    game_won = False
     while True:
         # skontaj na koje je polje kliknuo - DONE
         click = win.getMouse()
-        coords = get_clicked_field_coords(click, line_middle_coordinates)
+        field_coords = get_clicked_field_coords(click)
 
         if turn == "o":
-            #check if valid move, if not make player play again
-            draw_O(coords, win)
+            # check if valid move, if not make player play again
+            draw_O(field_coords, win)
             turn = "x"
         else:
             # check if valid move, if not make player play again
-            draw_X(coords, win)
+            draw_X(field_coords, win)
             turn = "o"
 
         # provjeri jel neko pobjedio
-        game_won = False
         if game_won:
-            # uradi sta radis kad neko pobjedi i izadji iz loopa
+            # do whatever you do when someone wins
             pass
         else:
-            # promjeni igraca kojem je red
+            # change player turn
             pass
 
 
@@ -75,11 +58,22 @@ def draw_board(win):
     second_vertical_line.draw(win)
 
 
+def get_clicked_field_coords(click: Point) -> tuple:
+    colindex = rowindex = 0
+    for coordinate in line_middle_coordinates:
+        if click.getX() >= coordinate:
+            colindex += 1
+        if click.getY() >= coordinate:
+            rowindex += 1
+
+    return rowindex, colindex
+
+
 def draw_O(field_coords: tuple, graph_win: GraphWin):
-    x,y = field_coords
+    x, y = field_coords
     field_center = field_centers[x][y]
-    c = Circle(field_center, 60)
-    c.setOutline("red")
+    c = Circle(field_center, 55)
+    c.setOutline("grey")
     c.setWidth(25)
     c.draw(graph_win)
 
@@ -87,19 +81,19 @@ def draw_O(field_coords: tuple, graph_win: GraphWin):
 def draw_X(field_coords: tuple, graph_win: GraphWin):
     x, y = field_coords
     field_center = field_centers[x][y]
+    cx = field_center.getX()
+    cy = field_center.getY()
 
-    p1 = Point(465, 285)
-    p2 = Point(425, 285)
-    p3 = Point(375, 350)
-    p4 = Point(325, 285)
-    p5 = Point(285, 285)
-    p6 = Point(350, 375)
-    p7 = Point(285, 465)
-    p8 = Point(325, 465)
-    p9 = Point(375, 400)
-    p10 = Point(425, 465)
-    p11 = Point(465, 465)
-    p12 = Point(400, 375)
+    x_line_1 = Polygon(Point(cx-65, cy-65), Point(cx+35, cy+65), Point(cx+65, cy+65), Point(cx-35, cy-65))
+    x_line_2 = Polygon(Point(cx-65, cy+65), Point(cx+35, cy-65), Point(cx+65, cy-65), Point(cx-35, cy+65))
+
+    x_line_1.setFill("grey")
+    x_line_1.setOutline("grey")
+    x_line_2.setFill("grey")
+    x_line_2.setOutline("grey")
+
+    x_line_1.draw(graph_win)
+    x_line_2.draw(graph_win)
 
 
 main()
