@@ -4,7 +4,8 @@ line_middle_coordinates = [225, 425]
 field_centers = [
     [Point(125, 125), Point(325, 125), Point(525, 125)],
     [Point(125, 325), Point(325, 325), Point(525, 325)],
-    [Point(125, 525), Point(325, 525), Point(525, 525)]]
+    [Point(125, 525), Point(325, 525), Point(525, 525)]
+]
 
 
 def main():
@@ -24,7 +25,7 @@ def main():
 
         if turn == "o":
             # check if valid move, if not make player play again
-            draw_O(field_coords, win)
+            draw_O(field_coords, win,board)
             turn = "x"
         else:
             # check if valid move, if not make player play again
@@ -69,8 +70,9 @@ def get_clicked_field_coords(click: Point) -> tuple:
     return rowindex, colindex
 
 
-def draw_O(field_coords: tuple, graph_win: GraphWin):
+def draw_O(field_coords: tuple, graph_win: GraphWin, board:list):
     x, y = field_coords
+    board
     field_center = field_centers[x][y]
     c = Circle(field_center, 55)
     c.setOutline("grey")
