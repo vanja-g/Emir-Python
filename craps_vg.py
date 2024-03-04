@@ -1,9 +1,9 @@
 from random import randint
 def main():
     first_roll = roll_dice()
-    if first_roll() in [2,3,12]:
+    if first_roll in [2,3,12]:
         print("you lose")
-    if first_roll() in [7,11]:
+    if first_roll in [7,11]:
         print("you win")
 
     print("roll for point")
