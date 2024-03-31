@@ -22,7 +22,7 @@ def count_days_between_dates(start_date: list, end_date: list):
 
     return days_passed
 
-def is_leap_year(year:int)
+def is_leap_year(year:int):
     pass
 
 
