@@ -1,7 +1,10 @@
-
-
-#step 1: take the list with duplicates and make it a dictionary
-# fromkeys makes a dictionary with a specific value and specified keys
-#step 2: make it back into a list, when u make it back into a list it removes the duplicates
-#because it makes all the items as keys all the duplicates disapear and become a value
-#and when u print it, dictionaries cant have duplicate keys so u get no duplicates
+def no_duplicates_here(user_list:list):
+    temp_list = []
+    for i in range(len(user_list)):
+        if user_list[i] not in temp_list:
+            temp_list.append(user_list[i])
+    return temp_list
+def main():
+    user_list = list(input("input your list here: "))
+    print(no_duplicates_here(user_list))
+main()

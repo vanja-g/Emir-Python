@@ -2,8 +2,8 @@ days_in_month = {1: 31, 2: 29, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 
 
 
 def count_days_between_dates(start_date: list, end_date: list):
-    start_day, start_month, start_year = map(int, start_date)
-    end_day, end_month, end_year = map(int, end_date)
+    start_day, start_month, start_year = start_date
+    end_day, end_month, end_year = end_date
 
     days_passed = (end_year - start_year) * 365
     if start_month > end_month:
@@ -36,6 +36,8 @@ def main():
         end_date = str(input("what is the second date?"))
         start_date_elements = start_date.split(".")
         end_date_elements = end_date.split(".")
+        map(int, start_date_elements)
+        map(int, end_date_elements)
 
         if not is_valid_date(start_date_elements):
             print("your start date isnt valid")
@@ -54,21 +56,33 @@ def main():
 
 
 def is_start_date_bigger_than_end_date(start_date: list, end_date: list):
-    if start_date[2] > end_date[2]:
-        return True
-    if start_date[1] > end_date[1]:
-        return True
-    if start_date[0] > end_date[0]:
-        return True
+    year_index = len(start_date) -1
+    for i in range(year_index -1, -1):
+        if(start_date[i] > end_date[i]):
+            return True
+        if (start_date[i] < end_date[i]):
+            return False
     return False
 
+def is_start_date_bigger_than_end_date_BAD(start_date: list, end_date: list):
+    is_date_bigger = False
+    while not is_date_bigger:
+        if start_date[2] > end_date[2]:
+            return True
+        if start_date[2] == end_date[2]:
+            if start_date[1] > end_date[1]:
+                is_date_bigger = True
+            if start_date[1] == end_date[1]:
+                if start_date[0] > end_date[0]:
+                    is_date_bigger = True
+                if start_date[0] == end_date[0]:
+                    is_date_bigger = False
+        return is_date_bigger
 
 def is_valid_date(date: list):
     if len(date) != 3:
         return False
 
-    month = int(date[1])
-    day = int(date[0])
     if day > days_in_month[month] or day < 1:
         return False
 
@@ -78,4 +92,5 @@ def is_valid_date(date: list):
     return True
 
 
-main()
+#main()
+print (is_start_date_bigger_than_end_date([23,2,2017], [23,3,2017]))
