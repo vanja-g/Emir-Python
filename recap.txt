@@ -1,0 +1,51 @@
+loops:
+    definite loop:
+            a loop which i know how many times it will run. These are "for" loops.
+
+                for i in range(10):
+                    ...
+                this loop will run 10 times and "i" will become each number between 0 and 10
+                not including 10
+
+                for i in <collection>:
+                    ...
+                this loop is running through a collection of something. It will run however
+                long this collection is. "i" will become each element in the collection.
+
+    indefinite loop:
+            a loop which I dont know how many times it will run. These are "while" loops.
+                while <condition> :
+                    ...
+                condition is code that evaluates to true or false.
+
+
+
+
+maps(dictionary):
+    a collection of key-value pairs.
+    d = {"k":1,"l":2, ...}
+    adding to a dictionary:
+        d["m"] = 3
+    accessing values:
+        print(d["l"]) => 2
+    size of dictionary:
+        len(d)
+    how to get list of all keys in dictionary:
+        l = d.keys()
+    how to get list of all values in dictionary:
+        l = d.values()
+    how to get list of all keys-value pairs at once:
+        l = d.items()
+    removing item from dictionary:
+        d.pop("k")
+
+
+
+Functions:
+
+def <name of function>(<parameters>:<parameter type>):
+    <function body>
+    ...
+    <optional return statement>
+
+
